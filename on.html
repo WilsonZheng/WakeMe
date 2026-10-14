@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Awake – iOSWakeMe</title>
+    <meta name="apple-mobile-web-app-title" content="Stay Awake" />
+  </head>
+  <body data-state="starting">
+    <main>
+      <header class="brand">
+        <a href="/">iOSWakeMe</a>
+        <button class="lang" type="button" data-i18n="brand.toggle">中文</button>
+      </header>
+      <h1 data-i18n="on.title">Screen stays on</h1>
+      <p class="lead" data-i18n="on.lead"></p>
+      <div class="orb-wrap" role="status" aria-live="polite">
+        <div class="orb"><div><strong id="state">Starting…</strong><span id="hint"></span></div></div>
+      </div>
+      <a class="btn warm" id="stop" href="/off" data-i18n="on.stop">Stop, allow Auto-Lock</a>
+      <p class="tips" data-i18n="on.rules"></p>
+      <footer data-i18n="footer"></footer>
+    </main>
+    <button class="tap" type="button">
+      <div><strong data-i18n="on.tapTitle">Tap anywhere</strong><span data-i18n="on.tapBody"></span></div>
+    </button>
+    <script type="module" src="/assets/wake.js"></script>
+  </body>
+</html>

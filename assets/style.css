@@ -1,0 +1,284 @@
+:root {
+  --bg: #0b0d12;
+  --panel: #151922;
+  --line: #262c3a;
+  --text: #eef1f7;
+  --muted: #8b93a7;
+  --on: #3ee08f;
+  --off: #ff8a5c;
+  --radius: 22px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 28px) 22px calc(env(safe-area-inset-bottom) + 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-height: 100svh;
+}
+
+header.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+header.brand a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lang {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+p.lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+/* Status orb */
+.orb-wrap {
+  display: grid;
+  place-items: center;
+  padding: 18px 0 6px;
+}
+
+.orb {
+  --c: var(--muted);
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 2px solid color-mix(in srgb, var(--c) 55%, transparent);
+  background: radial-gradient(circle, color-mix(in srgb, var(--c) 22%, transparent) 0%, transparent 70%);
+  transition:
+    border-color 0.4s,
+    background 0.4s;
+}
+
+.orb strong {
+  display: block;
+  font-size: 30px;
+  color: var(--c);
+  letter-spacing: -0.01em;
+}
+
+.orb span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-state="awake"] .orb {
+  --c: var(--on);
+  animation: breathe 3.2s ease-in-out infinite;
+}
+
+[data-state="off"] .orb {
+  --c: var(--off);
+}
+
+@keyframes breathe {
+  50% {
+    box-shadow: 0 0 60px color-mix(in srgb, var(--on) 35%, transparent);
+  }
+}
+
+/* Buttons and cards */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 17px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--on);
+  border-color: var(--on);
+  color: #06210f;
+}
+
+.btn.warm {
+  background: var(--off);
+  border-color: var(--off);
+  color: #2a0d02;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot, var(--muted));
+}
+
+.card.on {
+  --dot: var(--on);
+}
+
+.card.off {
+  --dot: var(--off);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card code,
+.url {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.url {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #0f1219;
+  border: 1px solid var(--line);
+}
+
+.tips {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.tips strong {
+  color: var(--text);
+}
+
+.tips ol {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+footer {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Tap-to-start overlay for when the browser needs a user gesture */
+.tap {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(6, 8, 12, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10;
+  border: 0;
+  color: var(--text);
+  font: inherit;
+  padding: 30px;
+}
+
+[data-state="needs-tap"] .tap {
+  display: grid;
+}
+
+.tap div {
+  text-align: center;
+}
+
+.tap strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.tap span {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+video.keepalive {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0.01;
+  pointer-events: none;
+  bottom: 0;
+  right: 0;
+}

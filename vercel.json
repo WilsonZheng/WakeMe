@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/awake", "destination": "/on", "permanent": false },
+    { "source": "/wake", "destination": "/on", "permanent": false },
+    { "source": "/stop", "destination": "/off", "permanent": false },
+    { "source": "/sleep", "destination": "/off", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    }
+  ]
+}

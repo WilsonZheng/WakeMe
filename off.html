@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Auto-Lock on – iOSWakeMe</title>
+  </head>
+  <body data-state="off">
+    <main>
+      <header class="brand">
+        <a href="/">iOSWakeMe</a>
+        <button class="lang" type="button" data-i18n="brand.toggle">中文</button>
+      </header>
+      <h1 data-i18n="off.title">Auto-Lock is back</h1>
+      <p class="lead" data-i18n="off.lead"></p>
+      <div class="orb-wrap" role="status">
+        <div class="orb"><div><strong data-i18n="off.state">Off</strong><span data-i18n="off.stateHint"></span></div></div>
+      </div>
+      <a class="btn primary" href="/on" data-i18n="off.again">Keep screen on again</a>
+      <p class="tips" data-i18n="off.forever"></p>
+      <footer data-i18n="footer"></footer>
+    </main>
+    <script type="module">
+      import { setupLangToggle } from "/assets/i18n.js";
+      // No release call needed: a wake lock belongs to the page that requested it,
+      // so navigating here from /on (or opening this URL) already dropped it.
+      setupLangToggle();
+    </script>
+  </body>
+</html>
