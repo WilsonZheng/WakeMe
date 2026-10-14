@@ -1,6 +1,8 @@
-# iOSWakeMe
+# WakeMe
 
-A tiny static site that keeps an iPhone screen from auto-locking, with one URL per action:
+A tiny static site that keeps an iPhone screen from auto-locking, with one URL per action.
+
+Live at **https://wake-me.vercel.app** (the old `ioswakeme.vercel.app` 308-redirects there).
 
 | URL | What it does |
 | --- | --- |
@@ -25,4 +27,4 @@ npx vercel@latest dev   # honours cleanUrls and the redirects in vercel.json
 
 ## Deploy
 
-Hosted on Vercel (personal account). `npx vercel@latest --prod` deploys the working tree.
+Hosted on Vercel (personal account, project `wakeme`). The project is connected to this GitHub repo, so every push to `main` deploys to production.

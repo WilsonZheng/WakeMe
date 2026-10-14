@@ -28,7 +28,7 @@ const STRINGS = {
     "off.stateHint": "Normal Auto-Lock",
     "off.again": "Keep screen on again",
     "off.forever": "<strong>Want Auto-Lock off permanently?</strong> A website cannot change iOS settings, but you can:<ol><li>Open Settings.</li><li>Go to Display &amp; Brightness, then Auto-Lock.</li><li>Choose Never.</li></ol>",
-    footer: "iOSWakeMe uses the Screen Wake Lock API. Nothing is stored or sent.",
+    footer: "WakeMe uses the Screen Wake Lock API. Nothing is stored or sent.",
   },
   zh: {
     "brand.toggle": "EN",
@@ -57,7 +57,7 @@ const STRINGS = {
     "off.stateHint": "正常自动锁定",
     "off.again": "重新保持常亮",
     "off.forever": "<strong>想永久关闭自动锁定？</strong>网页没法修改 iOS 设置，但你可以手动改：<ol><li>打开“设置”。</li><li>进入“显示与亮度”，再点“自动锁定”。</li><li>选择“永不”。</li></ol>",
-    footer: "iOSWakeMe 使用 Screen Wake Lock API，不存储也不上传任何数据。",
+    footer: "WakeMe 使用 Screen Wake Lock API，不存储也不上传任何数据。",
   },
 };
 
